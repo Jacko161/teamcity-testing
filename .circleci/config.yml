@@ -21,6 +21,7 @@ jobs:
       - run: mvn verify
       - store_artifacts:
           path: target
+      - codecov/upload
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
@@ -31,4 +32,3 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - mvn-test
-      - codecov/upload
