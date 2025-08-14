@@ -4,5 +4,7 @@ orbs:
 workflows:
   maven_test:
     jobs:
+      - docker:
+          - image: cimg/openjdk:21.0.8
       - maven/test:
           command: 'verify'
